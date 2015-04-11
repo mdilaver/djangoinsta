@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yönetim Girişi</title>
+    <link rel="stylesheet" type="text/css" href="/static/base.css"/>
+</head>
+<body>
+<h1>Kullanıcı Girişi</h1>
+
+{% if form.errors %}
+    <div class="errornote">Kullanıcı adı veya parola hatalı.</div>
+{% endif %}
+
+<form action="/accounts/auth/" method="POST">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" name="username" value="" id="username"/>
+    <label for="password">Password</label>
+    <input type="text" name="password" value="" id="password"/>
+    <input type="submit" value="Giriş Yap"/>
+
+</form>
+
+</body>
+</html>
+
+
+</body>
+</html>

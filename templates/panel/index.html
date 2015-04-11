@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yönetim İşlemleri</title>
+    <link rel="stylesheet" type="text/css" href="/dosyalar/style.css"/>
+</head>
+<body>
+<h3>Hoş geldin {{ request.user.get_full_name }}</h3>
+
+<h2>Yönetim İşlemleri</h2>
+
+<div><a href="/doktorlar">Doktor İşlemleri</a></div>
+<div><a href="/hasta-listesi">Hasta İşlemleri</a></div>
+<div><a href="/poliklinik-likstesi">Poliklinik İşlemleri</a></div>
+
+</body>
+</html>
