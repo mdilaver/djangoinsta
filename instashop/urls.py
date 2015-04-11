@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', 'instashop.views.logout'),
     url(r'^accounts/$', 'instashop.views.loggedin'),
     url(r'^accounts/invalid/$', 'instashop.views.invalid_login'),
+    url(r'^accounts/oauth/(\w*)', views.auth, name='auth')
 
     # url(r'accounts/login/$','django.contrib.auth.views.login', {'template_name':'panel/login.html'}),
     # url(r'accounts/logout/$','django.contrib.auth.views.logout', {'next_page':'/accounts/login/'}),
