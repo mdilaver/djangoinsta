@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^accounts/invalid/$', 'instashop.views.invalid_login'),
 
     # url(r'accounts/login/$','django.contrib.auth.views.login', {'template_name':'panel/login.html'}),
-    #url(r'accounts/logout/$','django.contrib.auth.views.logout', {'next_page':'/accounts/login/'}),
+    # url(r'accounts/logout/$','django.contrib.auth.views.logout', {'next_page':'/accounts/login/'}),
 )
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
