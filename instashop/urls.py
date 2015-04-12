@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'instashop.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^$', views.merhaba_dunya),
+    url(r'^$', views.loggedin),
     url(r'^panel/', include('panel.urls', namespace="panel")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', 'instashop.views.login'),
@@ -16,7 +16,8 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', 'instashop.views.logout'),
     url(r'^accounts/$', 'instashop.views.loggedin'),
     url(r'^accounts/invalid/$', 'instashop.views.invalid_login'),
-    url(r'^accounts/oauth/(\w*)', views.auth, name='auth')
+    url(r'^accounts/oauth/(\w*)', views.auth, name='auth'),
+    url(r'^auth/', include('allauth.urls')),
 
     # url(r'accounts/login/$','django.contrib.auth.views.login', {'template_name':'panel/login.html'}),
     # url(r'accounts/logout/$','django.contrib.auth.views.logout', {'next_page':'/accounts/login/'}),

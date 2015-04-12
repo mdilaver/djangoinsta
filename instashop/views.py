@@ -7,17 +7,20 @@ from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from authomatic import Authomatic
 from authomatic.adapters import DjangoAdapter
-
 from config import CONFIG
-
+import pprint
 authomatic = Authomatic(CONFIG, 'a super secret random string')
 
+
 def merhaba_dunya(request):
-    return render_to_response('merhaba.html')
+    template = 'merhaba.html'
+    context = locals()
+    return render_to_response(template, context)
 
 
 def login(request):
     c = {}
+
     c.update(csrf(request))
     return render_to_response('login.html', c)
 
@@ -55,7 +58,6 @@ def auth(request, provider_name):
 
     # Start the login procedure.
     result = authomatic.login(DjangoAdapter(request, response), provider_name)
-
     # If there is no result, the login procedure is still pending.
     # Don't write anything to the response if there is no result!
     if result:

@@ -13,6 +13,9 @@ class Alici(models.Model):
     ip_adres = models.IPAddressField()
     kayit_tarih = models.DateTimeField()
 
+    def __unicode__(self):
+        return self.ad_soyad
+
 class Satici(models.Model):
     kullanici_id = models.CharField(max_length=50)
     kullanici_adi = models.CharField(max_length=50)
@@ -26,3 +29,6 @@ class Satici(models.Model):
     son_giris = models.DateTimeField()
     ip_adres = models.IPAddressField()
     kayit_tarih = models.DateTimeField()
+
+    def __unicode__(self):
+        return self.ad_soyad
