@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # from django.http import *
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import auth
 from django.core.context_processors import csrf
@@ -39,8 +39,7 @@ def auth_view(request):
 
 @login_required
 def loggedin(request):
-    return render_to_response('loggedin.html',
-                              {'full_name': request.user.username})
+    return render(request, 'loggedin.html', {'extra': '1asdasdasa'})
 
 
 def invalid_login(request):

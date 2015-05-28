@@ -9,6 +9,7 @@ from django.template import RequestContext, loader
 
 @login_required
 def yonetim(reqest):
+    title = "TEST"
     return render_to_response('registration/index.html', locals())
 
 
